@@ -16,7 +16,7 @@ const DEMO = `dist-demo`
 // LIBRARY
 ////////
 
-function css() {
+function libCss() {
   return gulp
     .src(`src/index.css`)
     .pipe(
@@ -39,7 +39,7 @@ function css() {
 ////////
 
 function cssDemo() {
-  return gulp.src([`demo/*.css`]).pipe(gulp.dest(DEMO))
+  return gulp.src([`demo/*.css`, `dist/*.css`]).pipe(gulp.dest(DEMO))
 }
 
 function jsDemo() {
@@ -85,8 +85,9 @@ function htmlDemo() {
 }
 
 function watchDemo(done) {
+  gulp.watch(`index/*.css`, libCss)
   gulp.watch(`demo/*.pug`, htmlDemo)
-  gulp.watch(`demo/*.css`, cssDemo)
+  gulp.watch([`demo/*.css`, `dist/*.css`], cssDemo)
   gulp.watch(`demo/*.js`, jsDemo)
   done()
 }
@@ -98,10 +99,10 @@ function watchDemo(done) {
 const buildDemo = gulp.parallel(htmlDemo, jsDemo, cssDemo)
 buildDemo.displayName = `build-demo`
 
-gulp.task(`css`, css)
+gulp.task(`css`, libCss)
 gulp.task(`demo:html`, htmlDemo)
 gulp.task(`demo:js`, jsDemo)
 gulp.task(`demo:css`, cssDemo)
 gulp.task(`demo`, buildDemo)
 gulp.task(`demo:watch`, watchDemo)
-gulp.task(`default`, css)
+gulp.task(`default`, libCss)

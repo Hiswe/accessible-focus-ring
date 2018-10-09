@@ -1,5 +1,7 @@
 'use strict'
 
 var focusRing = require('../dist/accessible-focus-ring.js')
+// Parcel bundler doesn't export like rollup => .default
+var onTab = require('./on-tab').default
 
-focusRing()
+focusRing({ onTab: onTab })
