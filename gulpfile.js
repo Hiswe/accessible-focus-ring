@@ -84,13 +84,24 @@ function htmlDemo() {
     .pipe(gulp.dest(DEMO))
 }
 
+function watchDemo(done) {
+  gulp.watch(`demo/*.pug`, htmlDemo)
+  gulp.watch(`demo/*.css`, cssDemo)
+  gulp.watch(`demo/*.js`, jsDemo)
+  done()
+}
+
 ////////
 // EXPOSE TASKS
 ////////
+
+const buildDemo = gulp.parallel(htmlDemo, jsDemo, cssDemo)
+buildDemo.displayName = `build-demo`
 
 gulp.task(`css`, css)
 gulp.task(`demo:html`, htmlDemo)
 gulp.task(`demo:js`, jsDemo)
 gulp.task(`demo:css`, cssDemo)
-gulp.task(`demo`, gulp.parallel(htmlDemo, jsDemo, cssDemo))
+gulp.task(`demo`, buildDemo)
+gulp.task(`demo:watch`, watchDemo)
 gulp.task(`default`, css)

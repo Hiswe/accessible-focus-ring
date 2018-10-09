@@ -6,8 +6,8 @@
   ]
 
 mixin menu( activeIndex, redefineVh )
-  ul.menu
+  nav.nav
     each item, index  in items
       - var isActive = activeIndex === index
-      - var className = `menu__item${ isActive ? ` menu__item--active` : `` }`
-      li(class=className):  a(href=`${root}${item.url}`)= item.name
+      - var className = `nav__item${ isActive ? ` nav__item--active` : `` }`
+      a(class=className href=`${root}${item.url}`)= item.name

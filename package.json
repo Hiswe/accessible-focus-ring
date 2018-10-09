@@ -15,6 +15,7 @@
     "build": "gulp && rollup --config",
     "build:demo": "npm run build && gulp demo",
     "demo": "npm run build:demo && http-server ./dist-demo -c-1",
+    "demo:watch": "gulp demo:watch",
     "toc": "doctoc *.md --github --notitle"
   },
   "devDependencies": {
