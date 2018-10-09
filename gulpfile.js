@@ -4,7 +4,8 @@ const gulp = require('gulp')
 const rename = require('gulp-rename')
 const cleanCSS = require('gulp-clean-css')
 const pug = require('gulp-pug')
-const htmlBeautify = require('gulp-html-beautify')
+const through = require('through2')
+const beautify = require('js-beautify')
 const args = require('yargs').argv
 const Parcel = require('parcel-bundler')
 
@@ -55,6 +56,20 @@ function jsDemo() {
   return bundler.bundle()
 }
 
+function beautifyHtml(opts = {}) {
+  function modifyFile(file, enc, cb) {
+    if (file.isNull()) return cb(null, file) // pass along
+    if (file.isStream()) {
+      return cb(new Error(`gulp-beautify: Streaming not supported`))
+    }
+    var str = file.contents.toString(`utf8`)
+    file.contents = new Buffer.from(beautify.html(str, opts))
+    cb(null, file)
+  }
+
+  return through.obj(modifyFile)
+}
+
 function htmlDemo() {
   return gulp
     .src([`demo/*.pug`, `!demo/_*.pug`])
@@ -65,7 +80,7 @@ function htmlDemo() {
         },
       })
     )
-    .pipe(htmlBeautify({ indent_size: 2 }))
+    .pipe(beautifyHtml({}))
     .pipe(gulp.dest(DEMO))
 }
 
