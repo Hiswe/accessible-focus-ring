@@ -7,6 +7,7 @@ yarn-error.log*
 dist
 dist-demo
 .cache
+.rpt2_cache
 
 # Runtime data
 pids
