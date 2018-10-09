@@ -8,6 +8,7 @@ const through = require('through2')
 const beautify = require('js-beautify')
 const args = require('yargs').argv
 const Parcel = require('parcel-bundler')
+const size = require('gulp-size')
 
 const isGhRelease = args[`gh-release`] === true
 const DEMO = `dist-demo`
@@ -32,6 +33,14 @@ function libCss() {
       })
     )
     .pipe(gulp.dest(`dist`))
+}
+
+function libSize() {
+  return gulp
+    .src(`dist/*`)
+    .pipe(size({ name: `regular`, showFiles: true }))
+    .pipe(size({ name: `regular`, showFiles: true, gzip: true }))
+  // .pipe(gulp.dest(`./`))
 }
 
 ////////
@@ -106,3 +115,4 @@ gulp.task(`demo:css`, cssDemo)
 gulp.task(`demo`, buildDemo)
 gulp.task(`demo:watch`, watchDemo)
 gulp.task(`default`, libCss)
+gulp.task(`lib:size`, libSize)
