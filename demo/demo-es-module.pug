@@ -7,4 +7,19 @@ block nav
   +menu(2)
 
 block content
+  style.
+    body.no-ring a:focus,
+    body.no-ring button:focus,
+    body.no-ring input:focus,
+    body.no-ring select:focus,
+    body.no-ring textarea:focus {
+      outline: none;
+    }
+    body.no-ring a::-moz-focus-inner,
+    body.no-ring button::-moz-focus-inner,
+    body.no-ring input::-moz-focus-inner,
+    body.no-ring select::-moz-focus-inner,
+    body.no-ring textarea::-moz-focus-inner {
+      border: 0;
+    }
   script(src=`${root}/esmodule-example.js`)
