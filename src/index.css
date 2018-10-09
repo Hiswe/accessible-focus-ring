@@ -1,14 +1,14 @@
-body:not(.user-is-tabbing) a:focus,
-body:not(.user-is-tabbing) button:focus,
-body:not(.user-is-tabbing) input:focus,
-body:not(.user-is-tabbing) select:focus,
-body:not(.user-is-tabbing) textarea:focus {
+body.user-not-tabbing a:focus,
+body.user-not-tabbing button:focus,
+body.user-not-tabbing input:focus,
+body.user-not-tabbing select:focus,
+body.user-not-tabbing textarea:focus {
   outline: none;
 }
-body:not(.user-is-tabbing) a::-moz-focus-inner,
-body:not(.user-is-tabbing) button::-moz-focus-inner,
-body:not(.user-is-tabbing) input::-moz-focus-inner,
-body:not(.user-is-tabbing) select::-moz-focus-inner,
-body:not(.user-is-tabbing) textarea::-moz-focus-inner {
+body.user-not-tabbing a::-moz-focus-inner,
+body.user-not-tabbing button::-moz-focus-inner,
+body.user-not-tabbing input::-moz-focus-inner,
+body.user-not-tabbing select::-moz-focus-inner,
+body.user-not-tabbing textarea::-moz-focus-inner {
   border: 0;
 }
