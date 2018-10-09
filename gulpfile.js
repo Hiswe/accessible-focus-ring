@@ -19,25 +19,16 @@ const DEMO = `dist-demo`
 
 function libCss() {
   return gulp
-    .src(`src/index.css`)
-    .pipe(
-      rename({
-        basename: `focus-ring`,
-      })
-    )
+    .src(`src/focus-ring.css`)
     .pipe(gulp.dest(`dist`))
     .pipe(cleanCSS())
-    .pipe(
-      rename({
-        suffix: `.min`,
-      })
-    )
+    .pipe(rename({ suffix: `.min` }))
     .pipe(gulp.dest(`dist`))
 }
 
 function libSize() {
   return gulp
-    .src(`dist/*`)
+    .src(`dist/focus-ring.min.*`)
     .pipe(size({ name: `regular`, showFiles: true }))
     .pipe(size({ name: `regular`, showFiles: true, gzip: true }))
   // .pipe(gulp.dest(`./`))
@@ -54,7 +45,7 @@ function cssDemo() {
 function jsDemo() {
   const entryFiles = [
     `./demo/commonjs-example.js`,
-    `./demo/esmodule-example.js`,
+    `./demo/esmodule-example.ts`,
   ]
   const bundler = new Parcel(entryFiles, {
     outDir: `./${DEMO}`,

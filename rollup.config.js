@@ -5,7 +5,7 @@ import typescript from 'rollup-plugin-typescript2'
 const NAME = `focus-ring`
 
 const baseConfig = {
-  input: `src/index.ts`,
+  input: `src/focus-ring.ts`,
   output: {
     format: `umd`,
     name: `focusRing`,
