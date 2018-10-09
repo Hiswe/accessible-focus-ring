@@ -1,5 +1,7 @@
 node_modules
 src
+dist-demo
+.cache
 rollup.config.js
 gulpfile.js
 yarn-error.log

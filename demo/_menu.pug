@@ -1,0 +1,13 @@
+-
+  var items = [
+    {name: `global`, url: `/`},
+    {name: `common-js`, url: `/demo-commonjs.html`},
+    {name: `es-module`, url: `/demo-es-module.html`},
+  ]
+
+mixin menu( activeIndex, redefineVh )
+  ul.menu
+    each item, index  in items
+      - var isActive = activeIndex === index
+      - var className = `menu__item${ isActive ? ` menu__item--active` : `` }`
+      li(class=className):  a(href=`${root}${item.url}`)= item.name

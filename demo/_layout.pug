@@ -1,0 +1,23 @@
+include _menu.pug
+
+doctype html
+
+block vars
+
+- var title = pageTitle || ''
+
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    title=`accessible-focus-ring – ${title}`
+    link(rel="stylesheet", href=`${root}/demo.css`)
+
+  body
+    nav.panel.panel--menu
+      block nav
+    section.js-check.panel.panel--content.panel--100vh
+    section.panel.panel--no-check.panel--100vh 100vh without check
+
+    block content
