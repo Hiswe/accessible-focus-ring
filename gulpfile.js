@@ -21,7 +21,7 @@ function libCss() {
     .src(`src/index.css`)
     .pipe(
       rename({
-        basename: `accessible-focus-ring`,
+        basename: `focus-ring`,
       })
     )
     .pipe(gulp.dest(`dist`))

@@ -37,7 +37,7 @@ function checkOptions(options) {
   }
 }
 
-export default function accessibleFocusRing(options) {
+export default function focusRing(options) {
   options = checkOptions(options)
   document.body.classList.add(options.class)
 

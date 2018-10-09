@@ -1,13 +1,13 @@
 import merge from 'lodash.merge'
 import { uglify } from 'rollup-plugin-uglify'
 
-const NAME = `accessible-focus-ring`
+const NAME = `focus-ring`
 
 const baseConfig = {
   input: `src/index.js`,
   output: {
     format: `umd`,
-    name: `accessibleFocusRing`,
+    name: `focusRing`,
   },
 }
 

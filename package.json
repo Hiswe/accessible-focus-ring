@@ -1,5 +1,5 @@
 {
-  "name": "accessible-focus-ring",
+  "name": "@hiswe/focus-ring",
   "version": "1.0.0",
   "description": "remove the focus-ring while staying accessible",
   "main": "index.js",

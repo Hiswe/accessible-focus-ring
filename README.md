@@ -32,13 +32,13 @@ See this [hackernoon article](https://hackernoon.com/removing-that-ugly-focus-ri
 
 ```html
 <head>
-  <link rel="stylesheet" href="https://unpkg.com/accessible-focus-ring/dist/accessible-focus-ring.min.css">
-  <script src="https://unpkg.com/accessible-focus-ring/dist/accessible-focus-ring.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@hiswe/focus-ring/dist/focus-ring.min.css">
+  <script src="https://unpkg.com/@hiswe/focus-ring/dist/focus-ring.min.js"></script>
 </head>
 <body>
   <script>
     (function () {
-      accessibleFocusRing()
+      focusRing()
     }());
   </script>
 </body>
@@ -47,7 +47,7 @@ See this [hackernoon article](https://hackernoon.com/removing-that-ugly-focus-ri
 ### as a NPM module
 
 ```sh
-npm install vh-check
+npm install @hiswe/focus-ring
 ```
 
 You could import the default CSS
@@ -57,20 +57,20 @@ then
 **commonJS**
 
 ```js
-var focusRing = require('accessible-focus-ring')
+var focusRing = require('focus-ring')
 focusRing()
 ```
 
 **ES module**
 
 ```js
-import focusRing from 'accessible-focus-ring'
+import focusRing from 'focus-ring'
 focusRing()
 ```
 
 ## configuration
 
-`accessible-focus-ring` allows you to have more control by passing a configuration object.
+`focus-ring` allows you to have more control by passing a configuration object.
 
 ```js
 focusRing({
