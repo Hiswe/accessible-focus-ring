@@ -12,13 +12,14 @@
     "npm": "6.4.1"
   },
   "scripts": {
-    "build": "gulp && rollup --config",
+    "build": "del dist && gulp && rollup --config",
     "build:demo": "npm run build && gulp demo",
     "demo": "npm run build:demo && http-server ./dist-demo -c-1",
     "demo:watch": "gulp demo:watch",
     "toc": "doctoc *.md --github --notitle"
   },
   "devDependencies": {
+    "del-cli": "^1.1.0",
     "doctoc": "^1.3.1",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^3.10.0",
