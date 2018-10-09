@@ -2,9 +2,14 @@
   "name": "@hiswe/focus-ring",
   "version": "1.0.0",
   "description": "remove the focus-ring while staying accessible",
-  "main": "index.js",
+  "main": "dist/focus-ring.js",
   "repository": "https://github.com/Hiswe/accessible-focus-ring.git",
   "author": "Hiswe <hiswehalya@gmail.com>",
+  "keywords": [
+    "css",
+    "focus ring",
+    "accessibility"
+  ],
   "license": "MIT",
   "private": false,
   "engines": {
