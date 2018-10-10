@@ -14,6 +14,19 @@ test(`no arguments`, t => {
 test(`wrong arguments type`, t => {
   // @ts-ignore
   t.deepEqual(checkOptions(false), defaultOptions, `return default option`)
+  // @ts-ignore
+  t.deepEqual(
+    // @ts-ignore
+    checkOptions(() => {}),
+    defaultOptions,
+    `return default option for function`
+  )
+  t.deepEqual(
+    // @ts-ignore
+    checkOptions([]),
+    defaultOptions,
+    `return default option for array`
+  )
 })
 
 test(`can set class`, t => {

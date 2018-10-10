@@ -53,7 +53,8 @@
       ".ts"
     ],
     "exclude": [
-      "ava.config.js"
+      "ava.config.js",
+      "**/*.test.ts"
     ]
   }
 }
