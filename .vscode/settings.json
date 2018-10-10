@@ -1,5 +1,13 @@
 {
-  "cSpell.words": [
-    "Gilbertson"
-  ]
+  "cSpell.words": ["Gilbertson"],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.cache": true,
+    "**/.nyc_output": true,
+    "**/.rpt2_cache": true
+  }
 }
