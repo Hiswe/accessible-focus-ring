@@ -1,6 +1,6 @@
 {
   "name": "@hiswe/focus-ring",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "remove the focus-ring while staying accessible",
   "repository": "https://github.com/Hiswe/accessible-focus-ring.git",
   "author": "Hiswe <hiswehalya@gmail.com>",
