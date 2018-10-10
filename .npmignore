@@ -2,10 +2,10 @@
 .nyc_output
 .rpt2_cache
 .vscode
-demo
 dist-demo
 node_modules
 src
+src-demo
 .prettierrc.js
 ava.config.js
 gulpfile.js
