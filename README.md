@@ -10,10 +10,15 @@ for `1.4 kB` gzipped, including JS & CSS
 - [use](#use)
   - [as a global variable](#as-a-global-variable)
   - [as a NPM module](#as-a-npm-module)
+  - [styling files](#styling-files)
 - [configuration](#configuration)
   - [class](#class)
   - [onTab](#ontab)
+- [demo](#demo)
+  - [github pages](#github-pages)
+  - [local](#local)
 - [other stuff](#other-stuff)
+  - [run the tests](#run-the-tests)
   - [thanks](#thanks)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -51,14 +56,10 @@ See this [hackernoon article](https://hackernoon.com/removing-that-ugly-focus-ri
 npm install @hiswe/focus-ring
 ```
 
-You could import the default CSS
-
-then
-
 **commonJS**
 
 ```js
-var focusRing = require('focus-ring')
+const focusRing = require('focus-ring')
 focusRing()
 ```
 
@@ -69,9 +70,24 @@ import focusRing from 'focus-ring'
 focusRing()
 ```
 
+### styling files
+
+this package provides 2 styling files:
+
+```
+@hiswe/focus-ring/dist/focus-ring.min.css
+@hiswe/focus-ring/dist/focus-ring.scss
+```
+
+if you're using the SCSS files you can override the class used by setting:
+
+```scss
+$focus-ring-selector: '.my-custom-selector';
+```
+
 ## configuration
 
-`focus-ring` allows you to have more control by passing a configuration object.
+`focus-ring` allows you to have more control by passing a configuration object:
 
 ```js
 focusRing({
@@ -87,8 +103,12 @@ focusRing({
 
 Change the CSS class name.
 
-⚠️ Changing the class won't update the CSS file.  
-**You will have to provide your own.**
+⚠️ **Changing the class won't update the CSS file.**
+
+You will have to:
+
+- provide your own
+- or use & configure the `scss` file
 
 #### onTab
 
@@ -97,7 +117,28 @@ Change the CSS class name.
 
 you can specify a callback which will be called after the first user tab
 
+## demo
+
+### github pages
+
+https://hiswe.github.io/accessible-focus-ring/
+
+### local
+
+you'll need [node](https://nodejs.org/en/)
+
+- clone the project
+- `npm install`
+- `npm start`
+- go to: http://localhost:8080
+
 ## other stuff
+
+### run the tests
+
+- clone the project
+- `npm install`
+- `npm test`
 
 ### thanks
 
