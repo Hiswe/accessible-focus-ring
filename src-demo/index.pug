@@ -8,12 +8,14 @@ block nav
 
 block content
   p not done yet
-  //- script( src="https://unpkg.com/vh-check/dist/accessible-focus-ring.min.js")
-  //- script.
-  //-   (function () {
-  //-     var test = vhCheck();
-  //-     var message = (!test.isNeeded ? 'not ' : '') + 'needed.<br/>Gap is: ';
-  //-     message = message + test.value + 'px';
-  //-     const domCheckWrapper = document.querySelector('.js-check');
-  //-     domCheckWrapper.innerHTML = message;
-  //-   }());
+  script( src="https://unpkg.com/@hiswe/focus-ring/dist/focus-ring.min.js")
+  script.
+    (function () {
+      focusRing({
+        onTab: function onTab() {
+          console.log('tabbed!')
+          const domCheckWrapper = document.querySelector('.js-tab')
+          domCheckWrapper.innerHTML = 'tabbed: re-enable focus ring'
+        }
+      });
+    }());
