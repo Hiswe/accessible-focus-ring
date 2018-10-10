@@ -26,13 +26,11 @@ function libCss() {
     .pipe(gulp.dest(`dist`))
 }
 
-function libSize() {
-  return gulp
-    .src(`dist/focus-ring.min.*`)
-    .pipe(size({ name: `regular`, showFiles: true }))
-    .pipe(size({ name: `regular`, showFiles: true, gzip: true }))
-  // .pipe(gulp.dest(`./`))
-}
+const libMin = `dist/focus-ring.min.*`
+const sOpts = { name: `regular`, showFiles: true }
+const libSizeMin = () => gulp.src(libMin).pipe(size(sOpts))
+const libSizeGzip = () => gulp.src(libMin).pipe(size({ ...sOpts, gzip: true }))
+const libSize = gulp.series(libSizeMin, libSizeGzip)
 
 ////////
 // DEMO
@@ -106,4 +104,4 @@ gulp.task(`demo:css`, cssDemo)
 gulp.task(`demo`, buildDemo)
 gulp.task(`demo:watch`, watchDemo)
 gulp.task(`default`, libCss)
-gulp.task(`lib:size`, libSize)
+gulp.task(`size`, libSize)
