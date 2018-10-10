@@ -41,13 +41,13 @@ const libSize = gulp.series(libSizeMin, libSizeGzip)
 ////////
 
 function cssDemo() {
-  return gulp.src([`demo/*.css`, `dist/*.css`]).pipe(gulp.dest(DEMO))
+  return gulp.src([`src-demo/*.css`, `dist/*.css`]).pipe(gulp.dest(DEMO))
 }
 
 function jsDemo() {
   const entryFiles = [
-    `./demo/commonjs-example.js`,
-    `./demo/esmodule-example.ts`,
+    `./src-demo/commonjs-example.js`,
+    `./src-demo/esmodule-example.ts`,
   ]
   const bundler = new Parcel(entryFiles, {
     outDir: `./${DEMO}`,
@@ -74,7 +74,7 @@ function beautifyHtml(opts = {}) {
 
 function htmlDemo() {
   return gulp
-    .src([`demo/*.pug`, `!demo/_*.pug`])
+    .src([`src-demo/*.pug`, `!src-demo/_*.pug`])
     .pipe(
       pug({
         locals: {
@@ -88,9 +88,9 @@ function htmlDemo() {
 
 function watchDemo(done) {
   gulp.watch(`index/*.css`, libCss)
-  gulp.watch(`demo/*.pug`, htmlDemo)
-  gulp.watch([`demo/*.css`, `dist/*.css`], cssDemo)
-  gulp.watch(`demo/*.js`, jsDemo)
+  gulp.watch(`src-demo/*.pug`, htmlDemo)
+  gulp.watch([`src-demo/*.css`, `dist/*.css`], cssDemo)
+  gulp.watch(`src-demo/*.js`, jsDemo)
   done()
 }
 
