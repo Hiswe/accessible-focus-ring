@@ -1,0 +1,85 @@
+:root {
+  --c-primary: #80b6d0;
+  --c-primary-h: 200;
+  --c-primary-s: 46%;
+  --c-primary-darker: hsl(var(--c-primary-h), var(--c-primary-s), 50%);
+  --c-primary-lighter: hsl(var(--c-primary-h), var(--c-primary-s), 82%);
+  --c-primary-lightest: hsl(var(--c-primary-h), var(--c-primary-s), 95%);
+  --c-accent: #ff0078;
+}
+/*******************
+  GLOBAL
+********************/
+
+* {
+  box-sizing: border-box;
+}
+html {
+  background: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 112.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: currentColor;
+}
+
+/*******************
+  NAVIGATION
+********************/
+
+.nav {
+  flex: 0 0 50px;
+  height: 50px;
+  order: -1;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  background: var(--c-primary-lighter);
+}
+.nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  text-decoration: none;
+}
+.nav__item--active {
+  pointer-events: none;
+  color: var(--c-accent);
+}
+
+/*******************
+  OTHER
+********************/
+
+section {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1rem;
+}
+h1 span {
+  display: block;
+  font-weight: 400;
+}

@@ -1,0 +1,29 @@
+body.user-not-tabbing a:focus {
+  outline: none; }
+
+body.user-not-tabbing button:focus {
+  outline: none; }
+
+body.user-not-tabbing input:focus {
+  outline: none; }
+
+body.user-not-tabbing select:focus {
+  outline: none; }
+
+body.user-not-tabbing textarea:focus {
+  outline: none; }
+
+body.user-not-tabbing a::-moz-focus-inner {
+  border: 0; }
+
+body.user-not-tabbing button::-moz-focus-inner {
+  border: 0; }
+
+body.user-not-tabbing input::-moz-focus-inner {
+  border: 0; }
+
+body.user-not-tabbing select::-moz-focus-inner {
+  border: 0; }
+
+body.user-not-tabbing textarea::-moz-focus-inner {
+  border: 0; }
