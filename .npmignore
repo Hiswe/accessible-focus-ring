@@ -6,6 +6,7 @@ dist-demo
 node_modules
 src
 src-demo
+.nvmrc
 .prettierrc.js
 ava.config.js
 gulpfile.js
