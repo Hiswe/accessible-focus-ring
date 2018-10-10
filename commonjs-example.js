@@ -213,7 +213,7 @@ exports.default = onTab;
 
 function onTab() {
   console.log("tabbed!");
-  var domCheckWrapper = document.querySelector('.js-tab');
+  var domCheckWrapper = document.querySelector(".js-tab");
   domCheckWrapper.innerHTML = "tabbed: re-enable focus ring";
 }
 },{}],"commonjs-example.js":[function(require,module,exports) {
