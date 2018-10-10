@@ -1,0 +1,15 @@
+$tags: a button input select textarea;
+$focus-ring-selector: '.user-not-tabbing' !default;
+
+body#{$focus-ring-selector} {
+  @each $tag in $tags {
+    #{$tag}:focus {
+      outline: none;
+    }
+  }
+  @each $tag in $tags {
+    #{$tag}::-moz-focus-inner {
+      border: 0;
+    }
+  }
+}

@@ -9,6 +9,7 @@ const beautify = require('js-beautify')
 const args = require('yargs').argv
 const Parcel = require('parcel-bundler')
 const size = require('gulp-size')
+const sass = require('gulp-sass')
 
 const isGhRelease = args[`gh-release`] === true
 const DEMO = `dist-demo`
@@ -19,7 +20,10 @@ const DEMO = `dist-demo`
 
 function libCss() {
   return gulp
-    .src(`src/focus-ring.css`)
+    .src(`src/focus-ring.scss`)
+    .pipe(gulp.dest(`dist`))
+    .pipe(sass())
+    .pipe(rename({ extname: `.css` }))
     .pipe(gulp.dest(`dist`))
     .pipe(cleanCSS())
     .pipe(rename({ suffix: `.min` }))
