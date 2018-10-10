@@ -1,5 +1,7 @@
 # accessible-focus-ring
 
+[![npm version](https://badge.fury.io/js/%40hiswe%2Ffocus-ring.svg)](https://badge.fury.io/js/%40hiswe%2Ffocus-ring)
+
 remove the focus-ring while staying accessible
 for `1.4 kB` gzipped, including JS & CSS
 
