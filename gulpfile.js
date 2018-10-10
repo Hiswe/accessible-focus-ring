@@ -78,7 +78,9 @@ function htmlDemo() {
     .pipe(
       pug({
         locals: {
-          root: isGhRelease ? `https://hiswe.github.io/vh-check` : ``,
+          root: isGhRelease
+            ? `https://hiswe.github.io/accessible-focus-ring`
+            : ``,
         },
       })
     )
