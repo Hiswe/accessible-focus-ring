@@ -26,7 +26,7 @@
     "start": "npm run build:demo && http-server ./dist-demo -c-1",
     "demo:watch": "gulp demo:watch",
     "test": "nyc ava",
-    "release": "np --no-cleanup",
+    "release": "npm run build && np --no-cleanup",
     "release:github": "del dist-demo && npm run build:demo -- --gh-release && gh-pages -d dist-demo",
     "toc": "doctoc *.md --github --notitle",
     "size": "gulp size"
