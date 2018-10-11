@@ -1,5 +1,9 @@
 {
-  "cSpell.words": ["Gilbertson"],
+  "cSpell.words": [
+    "Gilbertson",
+    "hackernoon",
+    "ontab"
+  ],
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
