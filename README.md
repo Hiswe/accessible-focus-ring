@@ -85,6 +85,7 @@ if you're using the SCSS files you can override the class used by setting:
 
 ```scss
 $focus-ring-selector: '.my-custom-selector';
+@import '~@hiswe/focus-ring/dist/focus-ring.scss';
 ```
 
 ## configuration
