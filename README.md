@@ -61,14 +61,14 @@ npm install @hiswe/focus-ring
 **commonJS**
 
 ```js
-const focusRing = require('focus-ring')
+const focusRing = require('@hiswe/focus-ring')
 focusRing()
 ```
 
 **ES module**
 
 ```js
-import focusRing from 'focus-ring'
+import focusRing from '@hiswe/focus-ring'
 focusRing()
 ```
 
