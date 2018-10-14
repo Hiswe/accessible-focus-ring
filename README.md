@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/%40hiswe%2Ffocus-ring.svg)](https://badge.fury.io/js/%40hiswe%2Ffocus-ring) [![Build Status](https://travis-ci.org/Hiswe/accessible-focus-ring.svg?branch=master)](https://travis-ci.org/Hiswe/accessible-focus-ring)
 
 remove the focus-ring while staying accessible
-for `1.5kb` (`0.65 kB` gzipped), including JS & CSS
+for `1.5kb` ([0.65 kB gzipped](https://bundlephobia.com/result?p=@hiswe/focus-ring)), including JS & CSS
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
